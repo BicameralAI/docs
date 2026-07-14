@@ -1,68 +1,49 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Bicameral",
+  "description": "Documentation for Bicameral's local governance runtime, hosted coordination, installation, security, and operations.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#0891B2",
+    "light": "#22D3EE",
+    "dark": "#8B5CF6"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Start here",
             "pages": [
               "index",
               "quickstart",
-              "development"
+              "concepts/how-bicameral-works",
+              "concepts/responsibility-boundary"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Operate Bicameral",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "operations/installation",
+              "operations/support",
+              "operations/service-status",
+              "operations/releases"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Trust & Security",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Security",
             "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "trust/security",
+              "trust/vulnerability-disclosure",
+              "trust/compliance",
+              "trust/shared-responsibility"
             ]
           }
         ]
@@ -71,14 +52,19 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Install",
+          "href": "https://install.bicameral-ai.com",
+          "icon": "download"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Application",
+          "href": "https://app.bicameral-ai.com",
+          "icon": "browser"
+        },
+        {
+          "anchor": "GitHub",
+          "href": "https://github.com/BicameralAI",
+          "icon": "github"
         }
       ]
     }
@@ -91,32 +77,33 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@bicameral-ai.com"
+      },
+      {
+        "label": "Security",
+        "href": "mailto:devs@bicameral-ai.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Install Bicameral",
+      "href": "https://install.bicameral-ai.com"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/BicameralAI",
+      "linkedin": "https://www.linkedin.com/company/bicameral-ai"
     }
   }
 }

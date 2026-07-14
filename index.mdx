@@ -1,97 +1,57 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "Bicameral documentation"
+description: "Install, understand, operate, and secure Bicameral."
 ---
 
-## Setting up
+Bicameral helps software teams turn scattered product intent, architectural constraints, implementation evidence, and review decisions into governed, traceable work.
 
-Get your documentation site up and running in minutes.
+The local runtime sits at the team's trust boundary. Integrations and agents can propose evidence and actions, but governance determines what may become canonical.
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
-
-## Make it yours
-
-Design a docs site that looks great and empowers your users.
-
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
+<CardGroup cols={2}>
+  <Card title="Install Bicameral" icon="download" href="/quickstart">
+    Install the current Linux or macOS alpha, initialize a workspace, and start the local service.
   </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
+  <Card title="How Bicameral works" icon="diagram-project" href="/concepts/how-bicameral-works">
+    Understand the local runtime, hosted coordination, integrations, and authority boundary.
   </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+  <Card title="Trust and security" icon="shield-check" href="/trust/security">
+    Review the current security model, verified controls, and deliberately narrow public claims.
   </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
+  <Card title="Shared responsibility" icon="handshake" href="/trust/shared-responsibility">
+    See what Bicameral operates and what remains under the customer's control.
   </Card>
-</Columns>
+</CardGroup>
 
-## Create beautiful pages
+## Current maturity
 
-Everything you need to create world-class documentation.
+Bicameral is an alpha product. The local daemon, gateway, typed protocol, review state, local code grounding, and pluggable event-store interfaces are implemented and tested. Hosted authentication, coordination, installation, and source integrations continue to mature.
 
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
+<Warning>
+  Alpha software should not be treated as a substitute for production backup, identity, change-management, or incident-response practices. Validate the release and deployment mode before using it with sensitive data.
+</Warning>
 
-## Need inspiration?
+## Product shape
 
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+```text
+Sources, integrations, users, and agents
+                |
+                v
+      evidence and proposed actions
+                |
+                v
+Bicameral local runtime at the trust boundary
+  validation | policy | review | audit | grounding
+                |
+                v
+      approved canonical state
+```
+
+The hosted service may provide authentication, coordination, and advisory capabilities. It does not silently inherit local Decision Ledger, customer credential, or policy-root authority.
+
+## Useful links
+
+- [Install Bicameral](https://install.bicameral-ai.com)
+- [Open the hosted application](https://app.bicameral-ai.com)
+- [Bicameral on GitHub](https://github.com/BicameralAI)
+- [Support](mailto:support@bicameral-ai.com)
+- [Report a security issue](mailto:devs@bicameral-ai.com)

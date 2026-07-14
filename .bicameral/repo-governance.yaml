@@ -1,0 +1,38 @@
+# Repo-local governance facts for the Bicameral public documentation repository.
+# Canonical organization inventory: BicameralAI/bicameral-factory#227 and PR #231.
+# Public documentation can create customer, legal, security, and audit obligations even
+# when it contains no runtime code.
+schema_version: 1
+repo: BicameralAI/docs
+classification: docs
+visibility: public
+governance_owner: BicameralAI/bicameral-factory
+runtime_role: other
+release_trust_required: false
+# Exact build, link, publication, and claim-review check contexts are not established yet.
+required_checks: []
+branch_protection:
+  main:
+    require_pr: false
+    required_approvals: 0
+    require_status_checks: false
+    restrict_force_push: false
+shadow_genome_sources:
+  - failed_ci
+  - reverted_prs
+  - correction_records
+  - repeated_review_findings
+public_exposure:
+  allowed:
+    - approved product documentation
+    - approved installation and onboarding guidance
+    - approved release notes
+    - approved legal and privacy documents
+    - verified public security information
+  prohibited:
+    - unapproved compliance claims
+    - internal risk registers
+    - private vulnerability details
+    - customer or personnel data
+    - restricted evidence references
+    - internal review queues
