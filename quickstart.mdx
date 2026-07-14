@@ -1,80 +1,86 @@
 ---
 title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+description: "Install the Bicameral alpha and initialize a local workspace."
 ---
 
-## Get started in three steps
+<Warning>
+  The current public alpha supports Linux and macOS. Windows packaging, automatic self-update, and user-level service installation are not yet shipped.
+</Warning>
 
-Get your documentation site running locally and make your first customization.
+## 1. Install the binary
 
-### Step 1: Set up your local environment
+```bash
+curl -fsSL https://install.bicameral-ai.com/install.sh | sh
+bicameral --version
+```
 
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-    
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
-    
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
+The installer downloads the matching release archive, verifies its SHA-256 checksum, and places the `bicameral` binary on your path.
 
-### Step 2: Deploy your changes
+<Note>
+  Release binaries, `SHA256SUMS`, and `latest.json` are distributed through Bicameral's release-artifact path. When no compatible public alpha release exists, build from source rather than bypassing verification.
+</Note>
 
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-    
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
+## 2. Initialize a repository
 
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
+```bash
+cd /path/to/your-repository
+bicameral init
+bicameral doctor
+```
 
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
-  </Accordion>
-</AccordionGroup>
+`bicameral init` creates the workspace configuration needed by the local runtime. `bicameral doctor` checks local prerequisites and reports configuration problems before the service is started.
 
-### Step 3: Go live
+## 3. Start the local service
 
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
+```bash
+bicameral service start
+```
+
+The local service should remain bound to loopback unless a documented release explicitly supports another deployment. Do not expose the local gateway to an external network merely because the operating system permits it.
+
+## 4. Open the hosted application
+
+Open [app.bicameral-ai.com](https://app.bicameral-ai.com) and follow the supported pairing flow for the current release.
+
+The hosted application does not automatically receive local credentials or local Decision Ledger authority. The exact information exchanged depends on the current release and configured integration.
+
+## 5. Verify before using sensitive data
+
+Before connecting a real repository or operational source:
+
+- confirm the installed version and checksum;
+- review the current release notes;
+- confirm the local service binds only to the expected interface;
+- connect only the sources you intend to use;
+- verify where the selected event-store adapter keeps data; and
+- retain normal source-control, backup, identity, and incident-response practices.
+
+## Build from source
+
+Developers can build the local runtime from the public repository:
+
+```bash
+git clone https://github.com/BicameralAI/bicameral-bot.git
+cd bicameral-bot
+cargo build --release --locked
+cargo test --workspace
+```
+
+The source repository contains the authoritative developer quickstart, protocol documentation, tests, and architecture decisions for the local runtime.
 
 ## Next steps
 
-Now that you have your docs running, explore these key features:
-
 <CardGroup cols={2}>
-
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
-</Card>
-
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
-</Card>
-
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
-</Card>
-
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
-</Card>
-
+  <Card title="How Bicameral works" icon="diagram-project" href="/concepts/how-bicameral-works">
+    Learn how proposed evidence becomes reviewed authority.
+  </Card>
+  <Card title="Shared responsibility" icon="handshake" href="/trust/shared-responsibility">
+    Understand local, hosted, and customer-controlled boundaries.
+  </Card>
+  <Card title="Security" icon="shield-check" href="/trust/security">
+    Review the current security posture and disclosure process.
+  </Card>
+  <Card title="Support" icon="life-ring" href="/operations/support">
+    Find the appropriate support and security contact.
+  </Card>
 </CardGroup>
-
-<Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
-</Note>
