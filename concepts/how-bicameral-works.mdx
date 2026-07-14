@@ -1,0 +1,56 @@
+---
+title: "How Bicameral works"
+description: "The local runtime, hosted coordination, integrations, and authority boundary."
+---
+
+Bicameral is designed around a simple rule: expressive systems may propose evidence and actions, but they do not become authoritative merely because they produced a confident answer.
+
+## Main components
+
+### Local runtime
+
+The local Bicameral runtime validates typed requests, applies governance policy, maintains review state, grounds claims in the current code workspace, preserves audit records, and materializes approved events through a selected event-store adapter.
+
+### Integrations
+
+Integrations connect operational sources such as project systems, collaboration tools, calendars, and approved source bindings. They produce evidence or candidates. They do not own the Decision Ledger or release authority.
+
+### MCP and agent surfaces
+
+MCP, command-line, dashboard, and other agent or operator surfaces translate user intent into typed requests. These interfaces may expose capabilities granted by the local runtime, but they do not create new authority of their own.
+
+### Hosted service
+
+Bicameral Cloud provides hosted authentication, coordination, and product surfaces that are appropriate to the deployed release. Hosted services do not silently inherit local credentials, customer-selected event-store authority, or the customer's local Decision Ledger.
+
+## Governance flow
+
+```text
+source event or user action
+          |
+          v
+reviewable evidence or typed request
+          |
+          v
+validation and authority checks
+          |
+          v
+policy, grounding, and review state
+          |
+          v
+approved canonical event or refusal
+```
+
+## Confidence surfaces
+
+Bicameral keeps three questions separate:
+
+1. **Extraction:** Is the source material actually a decision, requirement, risk, or useful evidence?
+2. **Binding:** Does the evidence apply to the correct repository, file, symbol, release, or work item?
+3. **Compliance:** Does an implementation satisfy the approved decision or requirement?
+
+Collapsing those questions into one score creates the appearance of certainty while hiding interpretation debt.
+
+## Authority does not follow convenience
+
+An integration, agent, workflow, or hosted interface does not receive merge, release, deployment, signoff, risk-acceptance, or policy-root authority merely because it can call an API. Those authorities remain explicit, reviewable, and limited by the configured governance model.
