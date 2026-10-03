@@ -1,0 +1,18 @@
+{
+  "binding_digest": "sha256:9c82a4dee3477de7a7b853f31caa11f9dcde92609ee0d89b5119d8d420a769f0",
+  "bot_commit": "5ffff52856a0306a8451dc1f67acc05d8bc1cb64",
+  "bot_version": "0.1.35",
+  "mcp": {
+    "commit": "a58434a30d2a55b50e762a53911615e697380848",
+    "package": "bicameral-mcp",
+    "python_requires": ">=3.11",
+    "release_descriptor_digest": "sha256:cbfd5fa9f2c43aa224b16e48bbafd3d1b351e276732aba8070b92f7582e92729",
+    "tool_request_protocol": "v2",
+    "version": "0.17.5",
+    "wheel_sha256": "6b0a778f2ec86213088a27248b034562a932fc54abfc329caffa1c13f5f9abdb",
+    "wheel_url": "https://files.pythonhosted.org/packages/8a/80/329b4e38e76123ed66b13a5475dd7929fb326ded6d0b210e0ae57b168da0/bicameral_mcp-0.17.5-py3-none-any.whl"
+  },
+  "release_id": "sha256:64bf314e389fcca824613f77bbb4007188a5cc8c9d9025bd19993fa064cd6b38",
+  "release_manifest_digest": "sha256:64bf314e389fcca824613f77bbb4007188a5cc8c9d9025bd19993fa064cd6b38",
+  "schema_version": 1
+}
